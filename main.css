@@ -1,0 +1,70 @@
+/* css reset */
+
+*:not(button) {
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+:root {
+    --button-border-size: 3px;
+    --grid-gap-size: 1px;
+    --grid-column-width: 75px;
+    --grid-column-height: calc(var(--grid-column-width) / 2);
+}
+
+.button {
+    border: solid black var(--button-border-size);
+    text-align: center;
+}
+
+.button:hover {
+    background-color: grey;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: var(--grid-gap-size);
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+.button-wrapper {
+    display: grid;
+    grid-gap: var(--grid-gap-size);
+    grid-template-columns: repeat(3,  var(--grid-column-width));
+    grid-template-rows: repeat(6, var(--grid-column-height));
+}
+
+#equals {
+    grid-area: 6 / 2 / span 1 / span 2;
+}
+
+#zero {
+    grid-area: 4 / 2 ;
+}
+
+#subtract {
+    grid-area: 4 / 1;
+}
+
+#add {
+    grid-area: 4 / 3;
+}
+
+
+#display {
+    border: solid black var(--button-border-size);
+    width: calc(var(--grid-gap-size) * 2 + var(--grid-column-width) * 3);
+    height: var(--grid-column-height);
+    box-sizing: border-box;
+    text-align: right;
+    overflow: auto;
+    font-size: 13px;
+}
+
+#performedOperation {
+    background-color: beige;
+    font-size:  1em;
+}
